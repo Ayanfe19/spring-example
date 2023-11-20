@@ -35,7 +35,7 @@ public class Main {
 
     }
 
-    @PatchMapping
+    @PostMapping
     public void addCustomer(@RequestBody NewCustomerRequest request) {
         Customer customer = new Customer();
         customer.setName(request.name());
@@ -43,6 +43,16 @@ public class Main {
         customer.setAge(request.age());
         customerRepository.save(customer);
     }
+
+    @DeleteMapping("{customerId}")
+    public void deleteCustomer(@PathVariable("customerId") Integer id) {
+        customerRepository.deleteById(id);
+    }
+
+//    @PutMapping("{customerId}")
+//    public void updateCustomer(@PathVariable("customerId") Integer id) {
+//        customerRepository.save(customer);
+//    }
 
 
 //    }
