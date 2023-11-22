@@ -22,12 +22,6 @@ public class Customer {
     private  Integer age;
 
 
-
-
-
-
-
-
     public Customer(Integer id,
                     String name,
                     String email,
